@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Media design portfolio: brand identity, motion, social and storefront work.">
+<meta property="og:title" content="Veer Portfolio">
+<meta property="og:image" content="m/bf-desktop.jpg">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<title>Veer Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an edit handover. Each project is a reel of pieces, and every piece carries its real cue line (format, length, frame rate, how it was made) in mono. */
+:root{
+  --paper:#EEF0EB; --card:#FFFFFF; --ink:#12141A; --mute:#5A6070; --line:#D3D6CE; --accent:#2D3FE0; --on-accent:#FFFFFF;
+  --stage:#0C0E12; --on-stage:#F1F2F4;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --wrap:1180px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--paper:#0E1014;--card:#171A21;--ink:#ECEEF2;--mute:#9BA1AF;--line:#272B34;--accent:#909CFF;--on-accent:#0E1014;--stage:#000000;--on-stage:#F1F2F4;color-scheme:dark}
+}
+:root[data-theme="dark"]{--paper:#0E1014;--card:#171A21;--ink:#ECEEF2;--mute:#9BA1AF;--line:#272B34;--accent:#909CFF;--on-accent:#0E1014;--stage:#000000;--on-stage:#F1F2F4;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible,video:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+img,video{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+p{margin:0}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;color:var(--mute)}
+
+/* top bar */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:22px}
+.top nav{display:flex;gap:22px;flex-wrap:wrap}
+.top nav a{text-decoration:none;font-size:.92rem;color:var(--mute)}
+.top nav a:hover{color:var(--ink)}
+.name{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center;padding-block:36px 72px}
+.hero h1{font-weight:800;font-size:clamp(2.5rem,6.2vw,5.1rem);line-height:.95;letter-spacing:-.035em;font-variation-settings:"opsz" 96}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{margin-top:26px;max-width:34em;font-size:1.12rem;color:var(--mute)}
+.hero .lede strong{color:var(--ink);font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 20px;margin-top:30px;padding-top:20px;border-top:1px solid var(--line)}
+.facts div{min-width:0}
+.facts b{display:block;font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;align-items:end}
+.strip img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;background:var(--stage)}
+.strip img:nth-child(1){transform:translateY(-28px)}
+.strip img:nth-child(3){transform:translateY(-44px)}
+.strip img:nth-child(4){transform:translateY(-12px)}
+
+/* project blocks */
+.project{border-top:1px solid var(--line);padding-block:64px}
+.phead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:40px;align-items:end;margin-bottom:44px}
+.phead h2{font-weight:800;font-size:clamp(2.1rem,4.6vw,3.6rem);line-height:.98;letter-spacing:-.03em}
+.phead .mono{margin-bottom:14px;display:block}
+.phead p{color:var(--mute);max-width:36em}
+.phead p + p{margin-top:12px}
+.phead p strong{color:var(--ink);font-weight:600}
+.piece{display:grid;grid-template-columns:230px minmax(0,1fr);gap:40px;padding-block:36px;border-top:1px solid var(--line)}
+.piece > header h3{font-weight:700;font-size:1.35rem;letter-spacing:-.015em;line-height:1.1}
+.piece > header p{margin-top:10px;font-size:.95rem;color:var(--mute)}
+.piece > header .mono{display:block;margin-top:14px;line-height:1.7}
+.body{min-width:0;display:grid;gap:14px}
+figure{margin:0;min-width:0}
+figure img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:var(--card);cursor:zoom-in}
+figcaption{margin-top:8px;font-size:.86rem;color:var(--mute)}
+figcaption .mono{display:block;margin-bottom:2px;color:var(--ink)}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.1fr);gap:14px;align-items:start}
+.reel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;background:var(--stage)}
+.swatches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.sw{padding:44px 12px 10px;font-family:var(--mono);font-size:.7rem;letter-spacing:.03em}
+.sw b{display:block;font-weight:500;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .92rem var(--body);padding:11px 18px;border-radius:999px;background:var(--accent);color:var(--on-accent);text-decoration:none;border:0;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.links{display:flex;gap:10px;flex-wrap:wrap}
+.shorts a{text-decoration:none;display:block}
+.shorts img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;background:var(--stage);cursor:pointer;border:0}
+.shorts span{display:block;margin-top:8px;font-size:.86rem;color:var(--mute)}
+
+/* method + contact */
+.method{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.method h3{font-weight:700;font-size:1.2rem;letter-spacing:-.01em;margin-bottom:10px}
+.method p{color:var(--mute);font-size:.97rem}
+.tools{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:grid;grid-template-columns:230px minmax(0,1fr);gap:40px}
+.tools p{color:var(--mute)}
+.tools p strong{color:var(--ink);font-weight:600}
+.contact{border-top:1px solid var(--line);padding-block:72px 96px}
+.contact h2{font-weight:800;font-size:clamp(2.2rem,5.4vw,4.2rem);line-height:.98;letter-spacing:-.03em;max-width:14em}
+.contact .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:30px}
+.email{font-family:var(--mono);font-size:1rem;user-select:all;padding:10px 0}
+.small{font-size:.86rem;color:var(--mute);margin-top:26px;max-width:52em}
+
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh}
+dialog::backdrop{background:rgba(0,0,0,.86)}
+dialog img{max-width:96vw;max-height:94vh;width:auto;height:auto;border-radius:8px;cursor:zoom-out}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:minmax(0,1fr);gap:56px;padding-block:20px 48px}
+  .phead,.piece,.tools{grid-template-columns:minmax(0,1fr);gap:20px}
+  .method{grid-template-columns:minmax(0,1fr);gap:24px}
+  .project{padding-block:48px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reel{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .split{grid-template-columns:minmax(0,1fr)}
+  .swatches,.facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .top nav{gap:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <span class="name">Veer Dangmaneerat</span>
+    <nav aria-label="Sections">
+      <a href="#furlet">Furlet</a>
+      <a href="#mhq">MHQ</a>
+      <a href="#fight-night">Fight Night</a>
+      <a href="#method">How I work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <span class="mono">Media designer · motion, brand, social · Manchester / London</span>
+      <h1 style="margin-top:18px">I start the brand, then make <em>everything it needs to be seen.</em></h1>
+      <p class="lede">In the last four months I launched a pet brand and rebuilt a Shorts channel, and made the identity, storefront, ads, explainers and edits for both myself. <strong>Motion is my main discipline.</strong> Graphic design and brand sit right next to it. AI tools are in every part of how I work.</p>
+      <div class="facts">
+        <div><b>80+</b><span class="mono">Shorts published</span></div>
+        <div><b>180k+</b><span class="mono">Views on MHQ</span></div>
+        <div><b>2</b><span class="mono">Brand identities shipped</span></div>
+        <div><b>1</b><span class="mono">Store taken to first sales</span></div>
+      </div>
+    </div>
+    <div class="strip" aria-hidden="true">
+      <img src="m/feeder-ad-poster.jpg" alt="">
+      <img src="m/site-home.jpg" alt="">
+      <img src="m/mhq-2.jpg" alt="">
+      <img src="m/why-short-poster.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- FURLET -->
+  <section class="project" id="furlet">
+    <div class="phead">
+      <div>
+        <span class="mono">Founder and sole designer · Aug 2026 to now</span>
+        <h2>Furlet</h2>
+      </div>
+      <div>
+        <p><strong>A pet-products brand I started and sell to the US at furletofficial.com.</strong> There was no design team to hand anything to, so every asset between the logo and the checkout is mine: identity, Shopify theme, channel art, ads, a ten-minute explainer and the Shorts cut from it.</p>
+        <p>The first paying customers came through in October 2026.</p>
+      </div>
+    </div>
+
+    <article class="piece">
+      <header>
+        <h3>Identity</h3>
+        <p>Eleven marks across two rounds, built on five logo methods from monogram to negative space. The sticker won because it still reads at 32 px in a comment thread.</p>
+        <span class="mono">11 concepts · SVG<br>Exports 720 to 2160 px<br>Inter Tight 800, uppercase</span>
+      </header>
+      <div class="body">
+        <div class="split">
+          <figure><img src="m/sticker.jpg" alt="Furlet logo: a white F on a tilted orange tile with a dark green offset shadow"><figcaption><span class="mono">Chosen mark</span>Used on every channel.</figcaption></figure>
+          <div class="g2">
+            <figure><img src="m/logo-r1.jpg" alt="Six round logo concepts for Furlet in green, orange and cream"><figcaption><span class="mono">Round 1</span>Arch, mascot, wordmark, stack, seal, sticker.</figcaption></figure>
+            <figure><img src="m/logo-r2.jpg" alt="Five further logo concepts including a cat and dog silhouette and a pet door"><figcaption><span class="mono">Round 2</span>Fusion, eared F, product action, ruler dial, pet door.</figcaption></figure>
+          </div>
+        </div>
+        <div class="swatches" role="img" aria-label="Furlet palette: forest green, gold, cream and clay orange">
+          <div class="sw" style="background:#0B261C;color:#F5EEE3"><b>Forest</b>#0B261C</div>
+          <div class="sw" style="background:#D3AD55;color:#071C14"><b>Gold</b>#D3AD55</div>
+          <div class="sw" style="background:#F5EEE3;color:#071C14"><b>Cream</b>#F5EEE3</div>
+          <div class="sw" style="background:#D95C2B;color:#071C14"><b>Clay</b>#D95C2B</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <header>
+        <h3>Storefront</h3>
+        <p>Most visitors arrive on a phone from a Shopping ad, so the theme was redesigned at 390 px first: photo before headline, price in the first screen, trust block before the scroll.</p>
+        <span class="mono">Shopify · Liquid, CSS<br>Designed at 390 × 844<br>Live at furletofficial.com</span>
+      </header>
+      <div class="body">
+        <div class="g4">
+          <figure><img src="m/site-home.jpg" alt="Furlet mobile homepage with a dog using a snuffle mat and the headline Made for the moment they've waited all day for"><figcaption><span class="mono">Home</span></figcaption></figure>
+          <figure><img src="m/site-product.jpg" alt="Furlet mobile product page for the Interactive Dog Snuffle Mat"><figcaption><span class="mono">Product</span></figcaption></figure>
+          <figure style="grid-column:span 2"><img src="m/bf-phases.jpg" alt="Three versions of the Black Friday mobile homepage, each with a countdown and a different headline"><figcaption><span class="mono">Black Friday hero · 3 timed phases</span>The headline, countdown and offer change as the Christmas delivery cutoff passes. Staged for November.</figcaption></figure>
+        </div>
+        <figure><img src="m/bf-desktop.jpg" alt="Desktop Black Friday homepage hero in dark green with a dog in an arch and a countdown timer"><figcaption><span class="mono">Desktop · 1400 px</span>The arch is the brand's hero device. The subject always breaks the frame.</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="piece">
+      <header>
+        <h3>Motion</h3>
+        <p>Three ads, three methods. The spec ad is rendered from code so the type stays sharp. The animated ad is generated shot by shot from character sheets. The brand film is nine seconds of a dog and no music.</p>
+        <span class="mono">9:16 · 1080 × 1920 masters<br>Shown here at 720p<br>Sound on</span>
+      </header>
+      <div class="body">
+        <div class="reel">
+          <figure><video controls playsinline preload="none" poster="m/spec-ad-poster.jpg" src="m/spec-ad.mp4"></video><figcaption><span class="mono">Brand spec ad · 18.5 s · 30 fps</span>Motion graphics written as an HTML timeline and rendered frame by frame. Sound design synthesised, no library music.</figcaption></figure>
+          <figure><video controls playsinline preload="none" poster="m/feeder-ad-poster.jpg" src="m/feeder-ad.mp4"></video><figcaption><span class="mono">"48 hours" · 32.7 s · 24 fps</span>Animated ad for the raised feeder. 9 keyframes, 10 clips, 3 voices, lip-synced.</figcaption></figure>
+          <figure><video controls playsinline preload="none" poster="m/brand-film-poster.jpg" src="m/brand-film.mp4"></video><figcaption><span class="mono">Brand film · 9.4 s</span>Instagram relaunch reel. Natural sound, muted grade, cream end card.</figcaption></figure>
+        </div>
+        <figure><img src="m/feeder-keys.jpg" alt="Contact sheet of nine animated keyframes showing a dog, vets and an owner in a 3D cartoon style"><figcaption><span class="mono">"48 hours" · keyframes</span>Each frame was generated against the same character sheets and one style block, which is what holds continuity across shots.</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="piece">
+      <header>
+        <h3>Why Does My Dog Do That?</h3>
+        <p>A ten-minute explainer written so each of its 12 chapters opens on a hook that needs no context. That let me cut all 12 into Shorts without re-editing the script.</p>
+        <span class="mono">16:9 · 9:42 · 12 chapters<br>+ 12 Shorts, 34 to 56 s<br>1,480 words, every fact sourced</span>
+        <div class="links" style="margin-top:16px"><a class="btn ghost" href="https://youtu.be/k0gwhYqT-kU" target="_blank" rel="noopener">Watch on YouTube</a></div>
+      </header>
+      <div class="body">
+        <div class="split">
+          <figure><video controls playsinline preload="none" poster="m/why-short-poster.jpg" src="m/why-short.mp4" style="width:100%;aspect-ratio:9/16;border-radius:10px;background:var(--stage)"></video><figcaption><span class="mono">Short 9 of 12 · 40.9 s</span>Framed as a post so the hook reads before the video starts.</figcaption></figure>
+          <div class="g2">
+            <figure><img src="m/why-north.jpg" alt="Flat illustration of a small dog circling a compass on grass"><figcaption><span class="mono">Scene frame</span>Flat felt-pen style in the brand palette.</figcaption></figure>
+            <figure><img src="m/why-brow.jpg" alt="Illustrated diagram comparing a wolf's face and a dog's face"><figcaption><span class="mono">Diagram plate</span>Labels are set in code, never generated.</figcaption></figure>
+            <figure style="grid-column:span 2"><img src="m/why-sheet.jpg" alt="Character sheet of Bella, a cartoon Pomeranian with a pink bow, in seven poses"><figcaption><span class="mono">Character sheet · Bella</span>The recurring lead, redrawn in 2D from the skit below.</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <header>
+        <h3>Bella's Revenge</h3>
+        <p>An entertainment skit with no product in it. A jealous Pomeranian spends a day mocking the poodle next door. Original cast, original voices.</p>
+        <span class="mono">9:16 · 36 s · 10 shots<br>3 character voices<br>Synthesised SFX</span>
+      </header>
+      <div class="body">
+        <div class="split">
+          <figure><video controls playsinline preload="none" poster="m/bella-poster.jpg" src="m/bella.mp4" style="width:100%;aspect-ratio:9/16;border-radius:10px;background:var(--stage)"></video><figcaption><span class="mono">Cut 2 · dialogue version</span></figcaption></figure>
+          <figure><img src="m/bella-board.jpg" alt="Storyboard of ten frames showing a Pomeranian, a pink poodle and their owner in a park and at home"><figcaption><span class="mono">Storyboard · 10 frames</span>Cut 1 came back as "boring, not enough conversation", so cut 2 gave every on-screen character their own line.</figcaption></figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <header>
+        <h3>Social and ad stills</h3>
+        <p>Channel art, an Instagram launch row and Shopping ad images. I check banner crops against a real screenshot of the live page, because the published safe zones were wrong for Facebook.</p>
+        <span class="mono">YouTube 2560 × 1440<br>Facebook 1640 × 856<br>Instagram 4:5</span>
+      </header>
+      <div class="body">
+        <figure><img src="m/fb-cover.jpg" alt="Furlet Facebook cover in dark green with the wordmark, tagline and two photos in arches"><figcaption><span class="mono">Facebook cover</span>The sticker stands in for the F of the wordmark.</figcaption></figure>
+        <div class="g4">
+          <figure><img src="m/ig-post_flat.jpg" alt="Top-down photo of a grey snuffle mat on a cream background"><figcaption><span class="mono">IG launch · flat</span></figcaption></figure>
+          <figure><img src="m/ig-post_macro.jpg" alt="Macro photo of grey and cream fleece with a single piece of kibble"><figcaption><span class="mono">IG launch · macro</span></figcaption></figure>
+          <figure><img src="m/win-1.jpg" alt="Ginger cat sitting on a window perch seen through glass"><figcaption><span class="mono">Carousel · slide 1</span></figcaption></figure>
+          <figure><img src="m/win-3.jpg" alt="Hand cleaning a soapy window with a squeegee, revealing a cat on a perch"><figcaption><span class="mono">Carousel · slide 3</span></figcaption></figure>
+        </div>
+        <figure><img src="m/perch-serp.jpg" alt="Mock-up of a Google Shopping row for cat window perches with the Furlet image highlighted among competitors"><figcaption><span class="mono">Shopping image, tested in context</span>The ad image was judged in a mock-up of the results row it has to win, next to the competitors it sits beside.</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="piece">
+      <header>
+        <h3>Decks and reports</h3>
+        <p>Long documents I designed and wrote to make my own decisions with.</p>
+        <span class="mono">PDF · 16 to 30 pages each</span>
+      </header>
+      <div class="body">
+        <div class="g3">
+          <figure><img src="m/doc-1.jpg" alt="Cover page: Q4 2026, what a corporate brand would do in Furlet's position"><figcaption><span class="mono">Q4 strategy · 16 pp</span></figcaption></figure>
+          <figure><img src="m/doc-2.jpg" alt="Cover page: The US pet supplies market and how small brands build trust and sell"><figcaption><span class="mono">US market report · 21 pp</span></figcaption></figure>
+          <figure><img src="m/doc-3.jpg" alt="Cover page: Google Shopping ads, what 110 videos teach and how Furlet should use it"><figcaption><span class="mono">Ads research · 30 pp</span></figcaption></figure>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- MHQ -->
+  <section class="project" id="mhq">
+    <div class="phead">
+      <div>
+        <span class="mono">Creator and editor · YouTube Shorts · 2026</span>
+        <h2>MHQ</h2>
+      </div>
+      <div>
+        <p><strong>A Shorts channel telling one real story about one person in under a minute.</strong> I rebranded it in October, then kept changing the edit until the numbers moved. It has 509 subscribers and more than 80 Shorts, with up to six going out in a day.</p>
+        <p>This is where I learned to work at volume and to cut what I like when the retention graph disagrees.</p>
+      </div>
+    </div>
+
+    <article class="piece">
+      <header>
+        <h3>Identity</h3>
+        <p>Three logo routes, one banner line. Near-black, bone, and a single ember full stop that carries through to the caption highlight in every Short.</p>
+        <span class="mono">Logo 800 px · Banner 2560 × 1440<br>Inter Tight + Instrument Serif<br>Live 10 Oct 2026</span>
+        <div class="links" style="margin-top:16px"><a class="btn ghost" href="https://www.youtube.com/@MHQMoments/shorts" target="_blank" rel="noopener">Open the channel</a></div>
+      </header>
+      <div class="body">
+        <div class="split">
+          <figure><img src="m/mhq-logo.jpg" alt="MHQ logo: bold white letters with an amber full stop on black"><figcaption><span class="mono">Chosen mark</span></figcaption></figure>
+          <div class="body">
+            <figure><img src="m/mhq-compare.jpg" alt="Three MHQ logo options shown as round avatars at large and small sizes"><figcaption><span class="mono">Routes A, B, C</span>Tested at avatar size before choosing.</figcaption></figure>
+            <figure><img src="m/mhq-banner.jpg" alt="Channel banner reading Real moments that hit different. One person, one moment, under a minute"><figcaption><span class="mono">Banner · mobile crop</span></figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <header>
+        <h3>The edit</h3>
+        <p>I ran a blind test in which 18 of 18 reviewers could tell my Shorts from the channel I was benchmarking. The gap turned out to be footage variety, so I wrote rules: six or more setups, a proof shot for every noun, no soundbite over three seconds.</p>
+        <span class="mono">9:16 · 40 to 58 s · 30 fps<br>Word-timed captions<br>QC script before every upload</span>
+      </header>
+      <div class="body">
+        <div class="g4 shorts">
+          <a href="https://www.youtube.com/shorts/07lCSn82HFo" target="_blank" rel="noopener"><img src="m/mhq-1.jpg" alt="Frame from a Short captioned Arsenal released him at 13 years old"><span>Eze, the day Arsenal let him go</span></a>
+          <a href="https://www.youtube.com/shorts/ZK9FpdsaW5I" target="_blank" rel="noopener"><img src="m/mhq-2.jpg" alt="Frame from a Short captioned Critics called Lando Norris mentally weak"><span>Norris, called mentally weak</span></a>
+          <a href="https://www.youtube.com/shorts/WIJ5REYiPvc" target="_blank" rel="noopener"><img src="m/mhq-3.jpg" alt="Frame from a Short captioned Speed tried for over a year to meet Ronaldo"><span>Speed finally meets Ronaldo</span></a>
+          <a href="https://www.youtube.com/shorts/yeFIPy3-GRE" target="_blank" rel="noopener"><img src="m/mhq-4.jpg" alt="Frame from a Short showing a bakery worker, captioned thousand bucks"><span>The bakery and the $1,000</span></a>
+        </div>
+        <p class="small" style="margin-top:4px">Each frame opens the Short on YouTube. The edits are built from interviews and podcasts, with the story structure, captions, pacing and sound mix done by me.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- FIGHT NIGHT -->
+  <section class="project" id="fight-night">
+    <div class="phead">
+      <div>
+        <span class="mono">Media and Social Lead, paid · Sep to Nov 2025</span>
+        <h2>University of Manchester Fight Night</h2>
+      </div>
+      <div>
+        <p><strong>My first media job with a client, a deadline and a live event at the end of it.</strong> I interviewed the fighters on camera through the build-up, cut the footage into short-form video, and set the content direction and posting schedule for an Instagram account with 5,000 followers.</p>
+        <div class="links" style="margin-top:18px"><a class="btn ghost" href="https://www.instagram.com/manchesterfightnight/" target="_blank" rel="noopener">@manchesterfightnight</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="project" id="method">
+    <div class="phead">
+      <div>
+        <span class="mono">How I work</span>
+        <h2>Brief, build, check the number, cut again.</h2>
+      </div>
+      <div>
+        <p>I study Politics, Philosophy and Economics, so I came to design through the question of whether a piece of work did its job. That habit is in everything above.</p>
+      </div>
+    </div>
+    <div class="method">
+      <div><h3>I know what each piece is for</h3><p>The storefront was redesigned after 270 ad clicks produced no orders. The MHQ edit rules came out of a blind viewer test. I'd sooner find out a piece failed than assume it worked.</p></div>
+      <div><h3>I make a lot, quickly</h3><p>Six Shorts scheduled in one day. A ten-minute explainer and its 12 cut-downs in two days. Speed comes from building a pipeline once and then reusing it.</p></div>
+      <div><h3>I take the note</h3><p>"Boring." "The mouths don't match." "The start has no context." Each of those produced a better second cut within the day. The best idea wins, including when it isn't mine.</p></div>
+    </div>
+    <div class="tools">
+      <span class="mono">Tools, honestly</span>
+      <div>
+        <p><strong>Most of the work here was made with AI tools, directed and edited by me.</strong> I write the brief and the script, build the character sheets, choose the takes, fix what the model gets wrong and decide when it's finished. Where a model is the wrong tool, such as on-screen type or diagram labels, I build it in code instead.</p>
+        <p style="margin-top:12px">Image and video generation (Nano Banana Pro, Kling 3.0, Wan 2.7, Seedance, ChatGPT images) · Claude Code for code-rendered motion and build scripts · ffmpeg · CapCut · HTML, CSS and SVG · Shopify Liquid · text-to-speech and Whisper for voice and caption timing.</p>
+        <p style="margin-top:12px">BA Politics, Philosophy and Economics, University of Manchester, graduating July 2027, predicted First. IB Higher Level Art. English and Thai, both fluent.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <span class="mono">Contact</span>
+    <h2 style="margin-top:14px">Send me a brief. I'll send back a first cut.</h2>
+    <div class="row">
+      <span class="email" id="email">veerdangmaneerat@gmail.com</span>
+      <button class="btn" id="copy" type="button">Copy email</button>
+      <a class="btn ghost" href="https://www.linkedin.com/in/veer-dangmaneerat-19595134a" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://furletofficial.com" target="_blank" rel="noopener">furletofficial.com</a>
+    </div>
+    <p class="small">Figures as of November 2026. Channel numbers are from the public YouTube page.</p>
+  </section>
+</div>
+
+<dialog id="zoom" aria-label="Enlarged image"><img alt=""></dialog>
+
+<script>
+(function(){
+  var dlg=document.getElementById('zoom'), big=dlg.querySelector('img');
+  document.querySelectorAll('figure img').forEach(function(im){
+    im.tabIndex=0; im.setAttribute('role','button');
+    function open(){ big.src=im.src; big.alt=im.alt; if(dlg.showModal) dlg.showModal(); }
+    im.addEventListener('click',open);
+    im.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();open();} });
+  });
+  dlg.addEventListener('click',function(){ dlg.close(); });
+  var vids=[].slice.call(document.querySelectorAll('video'));
+  vids.forEach(function(v){ v.addEventListener('play',function(){ vids.forEach(function(o){ if(o!==v) o.pause(); }); }); });
+  var btn=document.getElementById('copy'), em=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    function sel(){ var r=document.createRange(); r.selectNodeContents(em); var s=getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent='Selected, press copy'; }
+    try{ navigator.clipboard.writeText(em.textContent).then(function(){ btn.textContent='Copied'; },sel); }catch(e){ sel(); }
+  });
+})();
+</script>
+
+</body>
+</html>
